@@ -24,7 +24,7 @@ module.exports = function (app, models) {
     // SHOW
     app.get('/events/:id', (req, res) => {
     // Search for the event by its id that was passed in via req.params
-        models.Events.findByPk(req.params.id).then((event) => {
+        models.Events.findByPk(req.params.id, { include: [{ model: models.Rsvps }] }).then((event) => {
             res.render('events-show', { event: event })
         }).catch((err) => {
         // if the id was for an event not in our db, log an error

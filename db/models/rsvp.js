@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Events extends Model {
+  class Rsvps extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,16 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Events.init({
-    title: DataTypes.STRING,
-    desc: DataTypes.TEXT,
-    imgUrl: DataTypes.STRING,
+  Rsvps.init({
+    name: DataTypes.STRING,
+    email: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Events',
+    modelName: 'Rsvps',
   });
-  Events.associate = function(models) {
-    Events.hasMany(models.Rsvps);
-  };
-  return Events;
+    Rsvps.associate = function(models) {
+    Rsvps.belongsTo(models.Events);
+    }
+  return Rsvps;
 };
