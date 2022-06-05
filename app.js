@@ -10,6 +10,9 @@ const bodyParser = require('body-parser');
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Styles
+// app.use(express.static('public'));
+
 // override with POST having ?_method=DELETE or ?_method=PUT
 app.use(methodOverride('_method'))
 

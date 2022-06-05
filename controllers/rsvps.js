@@ -17,5 +17,13 @@ module.exports = (app, models) => {
     });
 
     
-  // Delete  
+  // Delete
+    app.delete('/events/:eventId/rsvps/:id', (req, res) => {
+        models.Rsvps.findByPk(req.params.id).then(rsvp => {
+            rsvp.destroy();
+            res.redirect(`/events/${req.params.eventId}`);
+        }).catch((err) => {
+            console.log(err);
+        });
+    });
 }

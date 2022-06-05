@@ -1,20 +1,22 @@
-<div class="row mt-4">
-    <div class="col-lg-6 offset-lg-3">
-        <h1>Reviews</h1>
-        <a href="/events/new">New Event</a>
-        <h1>Events</h1>
+<div class="row mt-9 justify-content-center">
+    <div class="col-sm-6">
+        <div class="p-6 fs-1 shadow-lg bg-body rounded text-center">
+            <h1>Events</h1>
+        </div>
+        <div class="mt-6">
         {{#each events}}
             <div class="card mt-3">
                 <img class="card-img-top" src="{{this.imgUrl}}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">{{this.title}}</h5>
+                    <h5 class="">{{this.title}}</h5>
                     <p class="card-text">{{this.desc}}</p>
                 </div>
-                <div class="text-right">
+                <div class="card-footer text-right">
                     <a href="/events/{{this.id}}/rsvps/new" class="btn btn-primary btn-info">RSVP</a>
                     <a href="/events/{{this.id}}" class="btn btn-primary">View</a>
                 </div>
             </div>
         {{/each}}
+        </div>
     </div>
 </div>
