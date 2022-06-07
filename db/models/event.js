@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Events.associate = function(models) {
     Events.hasMany(models.Rsvps);
+    Events.belongsTo(models.Users);
   };
   return Events;
 };

@@ -15,6 +15,7 @@ module.exports = function (app, models) {
     app.post('/events', (req, res) => {
         models.Events.create(req.body).then(event => {
             // Redirect to events/:id
+            event.setUser(res.locals.CurrentUser);
             res.redirect(`/events/${event.id}`)
         }).catch((err) => {
             console.log(err)
@@ -26,6 +27,7 @@ module.exports = function (app, models) {
     // Search for the event by its id that was passed in via req.params
         models.Events.findByPk(req.params.id, { include: [{ model: models.Rsvps }] }).then((event) => {
             res.render('events-show', { event: event })
+            console.log(event)
         }).catch((err) => {
         // if the id was for an event not in our db, log an error
             console.log(err.message);

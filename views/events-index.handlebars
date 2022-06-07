@@ -11,10 +11,10 @@
                     <h5 class="">{{this.title}}</h5>
                     <p class="card-text">{{this.desc}}</p>
                 </div>
-                <div class="card-footer text-right">
-                    <a href="/events/{{this.id}}/rsvps/new" class="btn btn-primary btn-info">RSVP</a>
-                    <a href="/events/{{this.id}}" class="btn btn-primary">View</a>
-                </div>
+                    <div class="card-footer text-right">
+                        {{!-- <a href="/events/{{this.id}}/rsvps/new" class="btn btn-primary btn-info">RSVP</a> --}}
+                        <a href="/events/{{this.id}}" class="btn btn-primary">View</a>
+                    </div>
             </div>
         {{/each}}
         </div>
