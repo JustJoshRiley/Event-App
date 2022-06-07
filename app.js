@@ -95,12 +95,13 @@ app.use(cookieParser(process.env.SESSION_SECRET));
 const expiryDate = new Date(Date.now() + 60 * 60 * 1000 * 24 * 60);
 app.use(
     session({
-        secret: process.env.SESSION_SECRET,
+        secret: 'SECRET',
         cookie: { expires: expiryDate },
         resave: false,
         saveUninitialized: true,
     })
 );
+
 app.use(function (req, res, next) {
     res.locals.sessionFlash = req.session.sessionFlash;
     delete req.session.sessionFlash;
