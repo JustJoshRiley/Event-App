@@ -15,7 +15,7 @@
 ## Getting Started
 1. In order to clone the repository to your local machine, run the following command below or click the green Code button on the top right corner of the repository and then select Open with GitHub Desktop option or select Download ZIP option.
 ```zsh
-git clone https://github.com/alisherbegmatov/make-parties.git
+git clone
 ```
 ## Installation
 2. Open the project in the text / code editor of your choice and in the terminal, run the following command below:
