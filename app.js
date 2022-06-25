@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 
+const path = require('path')
+app.use(express.static('public'));
+
 // override with POST having ?_method=DELETE or ?_method=PUT
 app.use(methodOverride('_method'))
 
@@ -112,7 +115,7 @@ require('./controllers/events')(app, models);
 require('./controllers/rsvps')(app, models);
 require('./controllers/auth')(app, models);
 
-const port = process.env.PORT;
+const port = process.env.port;
 
 app.listen(port, (err) => {
     if (err) {
