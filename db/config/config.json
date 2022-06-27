@@ -17,8 +17,14 @@
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
+    "database": "event-app",
+    "host": "event-app.cuscz0pnmzeg.us-east-1.rds.amazonaws.com",
     "dialect": "postgres",
+    "port": 5432,
     "dialectOptions": {
+      "options": {
+          "encrypt": false
+      },
       "ssl": {
         "require": true,
         "rejectUnauthorized": false
