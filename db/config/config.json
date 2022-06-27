@@ -4,7 +4,7 @@
     "password": null,
     "database": "event-app",
     "host": "event-app.cuscz0pnmzeg.us-east-1.rds.amazonaws.com",
-    "dialect": "PostgreSQL",
+    "dialect": "postgres",
     "port": 5432
   },
   "test": {
@@ -13,13 +13,13 @@
     "database": "database_test",
     "host": "event-app.cuscz0pnmzeg.us-east-1.rds.amazonaws.com",
     "port": 5432,
-    "dialect": "PostgreSQL"
+    "dialect": "mysql"
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
     "database": "event-app",
     "host": "event-app.cuscz0pnmzeg.us-east-1.rds.amazonaws.com",
-    "dialect": "PostgreSQL",
+    "dialect": "postgres",
     "port": 5432,
     "dialectOptions": {
       "options": {
@@ -28,6 +28,10 @@
       "ssl": {
         "require": true,
         "rejectUnauthorized": false
+      },
+      "pool": {
+          "maxConnections": 5,
+          "maxIdleTime": 30
       }
     }
   }
