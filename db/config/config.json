@@ -2,7 +2,7 @@
   "development": {
     "username": null,
     "password": null,
-    "database": "Event-App",
+    "database": "event-app",
     "host": "event-app.cuscz0pnmzeg.us-east-1.rds.amazonaws.com",
     "dialect": "postgres",
     "port": 5432
@@ -11,7 +11,8 @@
     "username": "root",
     "password": null,
     "database": "database_test",
-    "host": "127.0.0.1",
+    "host": "event-app.cuscz0pnmzeg.us-east-1.rds.amazonaws.com",
+    "port": 5432,
     "dialect": "mysql"
   },
   "production": {
