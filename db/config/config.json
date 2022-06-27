@@ -3,7 +3,7 @@
     "username": null,
     "password": null,
     "database": "Event-App",
-    "host": "127.0.0.1",
+    "host": "event-app.cuscz0pnmzeg.us-east-1.rds.amazonaws.com",
     "dialect": "postgres",
     "port": 5432
   },
